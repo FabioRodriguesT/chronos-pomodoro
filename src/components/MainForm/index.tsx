@@ -57,12 +57,26 @@ const MainForm = () => {
   };
 
   const handleInterruptTask = () => {
+    const newMapTasks = state.tasks.map((task) => {
+      if (state.activeTask && task.id === state.activeTask.id) {
+        return {
+          ...task,
+          interruptDate: Date.now(),
+        };
+      }
+
+      return task;
+    });
+
+    console.log("MapTasks", newMapTasks);
+
     setState((prevState) => {
       return {
         ...prevState,
         activeTask: null,
         secondsRemaining: 0,
         formattedSecondsRemaining: "00:00",
+        tasks: newMapTasks,
       };
     });
   };
