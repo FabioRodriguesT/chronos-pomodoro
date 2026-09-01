@@ -1,13 +1,23 @@
-import { PlayCircleIcon } from "lucide-react";
+import { PlayCircleIcon, StopCircleIcon } from "lucide-react";
 import Cycles from "../Cycles";
 import DefaultButton from "../DefaultButton";
 import DefaultInput from "../DefaultInput";
 import useTaskContext from "../../contexts/TaskContext/useTaskContext";
 import { nanoid } from "nanoid";
 import type { TaskModel } from "../../models/TaskModel";
+import getNextCycle from "../../utils/getNextCycle";
+import getNextCycleType from "../../utils/getNextCycleType";
+import getNextCycleDuration from "../../utils/getNextCycleDuration";
+import formatSecondsToMinutes from "../../utils/formatSecondsToMinutes";
 
 const MainForm = () => {
-  const { setState } = useTaskContext();
+  const { state, setState } = useTaskContext();
+
+  console.log(state);
+
+  const nextCycle = getNextCycle(state.currentCycle);
+  const nextCycleType = getNextCycleType(nextCycle);
+  const nextCycleDuration = getNextCycleDuration(nextCycleType);
 
   const handleCreateNewTask = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,8 +38,8 @@ const MainForm = () => {
       startDate: Date.now(),
       completeDate: null,
       interruptDate: null,
-      duration: 1,
-      type: "workTime",
+      duration: nextCycleDuration,
+      type: nextCycleType,
     };
 
     const secondsRemaining = newTask.duration * 60;
@@ -38,9 +48,9 @@ const MainForm = () => {
       return {
         ...prevState,
         activeTask: newTask,
-        currentCycle: 1,
+        currentCycle: nextCycle,
         secondsRemaining,
-        formattedSecondsRemaining: "00:00",
+        formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
         tasks: [...prevState.tasks, newTask],
       };
     });
@@ -55,16 +65,29 @@ const MainForm = () => {
           labelText="task"
           placeholder="Digite algo"
           name="taskName"
+          disabled={!!state.activeTask}
         />
       </div>
 
       <div className="formRow">Próximo intervalo é de 25min.</div>
-      <div className="formRow">
-        <Cycles />
-      </div>
+
+      {state.currentCycle > 0 && (
+        <div className="formRow">
+          <Cycles />
+        </div>
+      )}
 
       <div className="formRow">
-        <DefaultButton icon={<PlayCircleIcon />} />
+        {!state.activeTask ? (
+          <DefaultButton
+            aria-label="Iniciar nova tarefa"
+            title="Iniciar nova tarefa"
+            type="submit"
+            icon={<PlayCircleIcon />}
+          />
+        ) : (
+          <DefaultButton type="button" icon={<StopCircleIcon />} color="red" />
+        )}
       </div>
     </form>
   );
