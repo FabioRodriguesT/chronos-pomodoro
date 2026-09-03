@@ -24,7 +24,23 @@ const TaskReducer = (
     }
 
     case TaskActionTypes.INTERRUPT_TASK: {
-      return state;
+      const newMapTasks = state.tasks.map((task) => {
+        if (state.activeTask && task.id === state.activeTask.id) {
+          return {
+            ...task,
+            interruptDate: Date.now(),
+          };
+        }
+        return task;
+      });
+
+      return {
+        ...state,
+        activeTask: null,
+        secondsRemaining: 0,
+        formattedSecondsRemaining: "00:00",
+        tasks: newMapTasks,
+      };
     }
 
     case TaskActionTypes.RESET_STATE: {
