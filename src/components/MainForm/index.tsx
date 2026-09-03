@@ -9,6 +9,7 @@ import getNextCycle from "../../utils/getNextCycle";
 import getNextCycleType from "../../utils/getNextCycleType";
 import getNextCycleDuration from "../../utils/getNextCycleDuration";
 import { TaskActionTypes } from "../../contexts/TaskContext/taskActions";
+import getCycleDescription from "../../utils/getCycleDescription";
 
 const MainForm = () => {
   const { state, dispatch } = useTaskContext();
@@ -18,6 +19,7 @@ const MainForm = () => {
   const nextCycle = getNextCycle(state.currentCycle);
   const nextCycleType = getNextCycleType(nextCycle);
   const nextCycleDuration = getNextCycleDuration(nextCycleType);
+  const cycleDescription = getCycleDescription();
 
   const handleCreateNewTask = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -62,14 +64,13 @@ const MainForm = () => {
         />
       </div>
 
-      <div className="formRow">Próximo intervalo é de 25min.</div>
+      {<div className="formRow">{cycleDescription}</div>}
 
       {state.currentCycle > 0 && (
         <div className="formRow">
           <Cycles />
         </div>
       )}
-
       <div className="formRow">
         {!state.activeTask && (
           <DefaultButton
