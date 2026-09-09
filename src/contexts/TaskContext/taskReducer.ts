@@ -46,6 +46,36 @@ const TaskReducer = (
     case TaskActionTypes.RESET_STATE: {
       return state;
     }
+
+    case TaskActionTypes.COUNT_DOWN: {
+      const { secondsRemaining } = action.payload;
+
+      return {
+        ...state,
+        secondsRemaining: secondsRemaining,
+        formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
+      };
+    }
+
+    case TaskActionTypes.COMPLETE_TASK: {
+      const newMapTasks = state.tasks.map((task) => {
+        if (state.activeTask && task.id === state.activeTask.id) {
+          return {
+            ...task,
+            completeDate: Date.now(),
+          };
+        }
+        return task;
+      });
+
+      return {
+        ...state,
+        activeTask: null,
+        secondsRemaining: 0,
+        formattedSecondsRemaining: "00:00",
+        tasks: newMapTasks,
+      };
+    }
   }
 
   return state;

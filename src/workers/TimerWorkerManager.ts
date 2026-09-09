@@ -1,3 +1,5 @@
+import type { TaskStateModel } from "../models/TaskStateModel";
+
 let instance: TimerWorkerManager | null = null;
 
 class TimerWorkerManager {
@@ -9,18 +11,20 @@ class TimerWorkerManager {
 
   static getInstance() {
     if (!instance) {
+      console.log("Criou Instancia");
       instance = new TimerWorkerManager();
     }
 
+    console.log("Pegou Instancia");
     return instance;
   }
 
-  postMessage(message: any) {
+  postMessage(message: TaskStateModel) {
     this.worker.postMessage(message);
   }
 
-  onmessage(callback: (event: MessageEvent) => void) {
-    this.worker.onmessage = callback;
+  onmessage(cb: (event: MessageEvent) => void) {
+    this.worker.onmessage = cb;
   }
 
   terminate() {
