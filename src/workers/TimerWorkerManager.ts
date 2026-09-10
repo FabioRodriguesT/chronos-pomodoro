@@ -11,11 +11,9 @@ class TimerWorkerManager {
 
   static getInstance() {
     if (!instance) {
-      console.log("Criou Instancia");
       instance = new TimerWorkerManager();
     }
 
-    console.log("Pegou Instancia");
     return instance;
   }
 

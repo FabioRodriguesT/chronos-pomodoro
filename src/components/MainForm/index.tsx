@@ -14,8 +14,6 @@ import getCycleDescription from "../../utils/getCycleDescription";
 const MainForm = () => {
   const { state, dispatch } = useTaskContext();
 
-  console.log(state);
-
   const nextCycle = getNextCycle(state.currentCycle);
   const nextCycleType = getNextCycleType(nextCycle);
   const nextCycleDuration = getNextCycleDuration(nextCycleType);
