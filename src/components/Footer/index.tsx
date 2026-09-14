@@ -1,14 +1,15 @@
+import { Link } from "react-router";
 import styles from "./styles.module.css";
 
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <a className={styles.hyperLink} href="">
+      <Link className={styles.hyperLink} to="/about-pomodoro">
         Entenda como funciona a técnica pomodoro
-      </a>
-      <a className={styles.hyperLink} href="">
+      </Link>
+      <Link className={styles.hyperLink} to="/">
         Chronos Pomodoro &copy; {new Date().getFullYear()}
-      </a>
+      </Link>
     </footer>
   );
 };
