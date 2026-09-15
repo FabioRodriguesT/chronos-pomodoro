@@ -19,6 +19,7 @@ const MainForm = () => {
   const nextCycleType = getNextCycleType(nextCycle);
   const nextCycleDuration = getNextCycleDuration(nextCycleType);
   const cycleDescription = getCycleDescription();
+  const lastTaskName = state.tasks.at(-1)?.name || "";
 
   const handleCreateNewTask = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -67,6 +68,7 @@ const MainForm = () => {
           placeholder="Digite algo"
           name="taskName"
           disabled={!!state.activeTask}
+          defaultValue={lastTaskName}
         />
       </div>
 
