@@ -49,15 +49,16 @@ const Settings = () => {
       return;
     }
 
-    const newConfigTimes = {
-      workTime,
-      shortBreakTime,
-      longBreakTime,
-    };
+    dispatch({
+      type: "CHANGE_SETTINGS",
+      payload: {
+        workTime,
+        shortBreakTime,
+        longBreakTime,
+      },
+    });
 
-    console.log("Salvar");
-
-    // dispatch({ type: "CHANGE_SETTINGS", payload: newConfigTimes });
+    showMessage.success("Configurações salvas");
   };
 
   return (
