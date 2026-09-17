@@ -16,6 +16,10 @@ const Settings = () => {
   const shortBreakTimeInput = useRef<HTMLInputElement>(null);
   const longBreakTimeInput = useRef<HTMLInputElement>(null);
 
+  useEffect(() => {
+    document.title = "Configurações - Chronos Pomodoro";
+  }, []);
+
   const handleSaveSettings = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     showMessage.dismiss();

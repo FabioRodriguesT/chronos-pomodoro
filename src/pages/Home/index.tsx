@@ -5,6 +5,10 @@ import MainForm from "../../components/MainForm";
 import MainTemplate from "../../components/templates/MainTemplate";
 
 const Home = () => {
+  useEffect(() => {
+    document.title = "Chronos Pomodoro";
+  }, []);
+
   return (
     <MainTemplate>
       <Container>
