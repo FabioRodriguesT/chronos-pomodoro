@@ -4,8 +4,62 @@ import DefaultInput from "../../components/DefaultInput";
 import Heading from "../../components/Heading";
 import MainTemplate from "../../components/templates/MainTemplate";
 import DefaultButton from "../../components/DefaultButton";
+import { useEffect, useRef, useState } from "react";
+import useTaskContext from "../../contexts/TaskContext/useTaskContext";
+import showMessage from "../../adapters/showMessage";
 
 const Settings = () => {
+  const { state, dispatch } = useTaskContext();
+  console.log("STATE", state.config);
+
+  const workTimeInput = useRef<HTMLInputElement>(null);
+  const shortBreakTimeInput = useRef<HTMLInputElement>(null);
+  const longBreakTimeInput = useRef<HTMLInputElement>(null);
+
+  const handleSaveSettings = (e: React.SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    showMessage.dismiss();
+
+    const formErrors: string[] = [];
+
+    const workTime = Number(workTimeInput.current?.value);
+    const shortBreakTime = Number(shortBreakTimeInput.current?.value);
+    const longBreakTime = Number(longBreakTimeInput.current?.value);
+
+    if (isNaN(workTime) || isNaN(shortBreakTime) || isNaN(longBreakTime)) {
+      formErrors.push("Digite apenas números para todos os campos.");
+    }
+    if (workTime < 1 || workTime > 99) {
+      formErrors.push("Digite valores entre 1 e 99 para foco.");
+    }
+
+    if (shortBreakTime < 1 || shortBreakTime > 30) {
+      formErrors.push("Digite valores entre 1 e 30 para descanso curto.");
+    }
+
+    if (longBreakTime < 1 || longBreakTime > 60) {
+      formErrors.push("Digite valores entre 1 e 60 para descanso longo.");
+    }
+
+    if (formErrors.length > 0) {
+      formErrors.forEach((error) => {
+        showMessage.error(error);
+      });
+
+      return;
+    }
+
+    const newConfigTimes = {
+      workTime,
+      shortBreakTime,
+      longBreakTime,
+    };
+
+    console.log("Salvar");
+
+    // dispatch({ type: "CHANGE_SETTINGS", payload: newConfigTimes });
+  };
+
   return (
     <MainTemplate>
       <Container>
@@ -18,15 +72,33 @@ const Settings = () => {
         </p>
       </Container>
       <Container>
-        <form action="" className="form">
+        <form action="" className="form" onSubmit={handleSaveSettings}>
           <div className="formRow">
-            <DefaultInput id="workTime" labelText="Foco" />
+            <DefaultInput
+              id="workTime"
+              labelText="Foco"
+              ref={workTimeInput}
+              defaultValue={state.config.workTime}
+              type="number"
+            />
           </div>
           <div className="formRow">
-            <DefaultInput id="shortBreakTime" labelText="Descanso curto" />
+            <DefaultInput
+              id="shortBreakTime"
+              labelText="Descanso curto"
+              ref={shortBreakTimeInput}
+              defaultValue={state.config.shortBreakTime}
+              type="number"
+            />
           </div>
           <div className="formRow">
-            <DefaultInput id="longBreakTime" labelText="Descanso longo" />
+            <DefaultInput
+              id="longBreakTime"
+              labelText="Descanso longo"
+              ref={longBreakTimeInput}
+              defaultValue={state.config.longBreakTime}
+              type="number"
+            />
           </div>
           <div className="formRow">
             <DefaultButton
