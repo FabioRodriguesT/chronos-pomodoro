@@ -48,7 +48,7 @@ const History = () => {
 
     setConfirmClearHistory(false);
     dispatch({ type: TaskActionTypes.RESET_STATE });
-  }, [confirmClearHistory]);
+  }, [confirmClearHistory, dispatch]);
 
   useEffect(() => {
     return () => {

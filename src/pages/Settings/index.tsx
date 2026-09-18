@@ -4,13 +4,12 @@ import DefaultInput from "../../components/DefaultInput";
 import Heading from "../../components/Heading";
 import MainTemplate from "../../components/templates/MainTemplate";
 import DefaultButton from "../../components/DefaultButton";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import useTaskContext from "../../contexts/TaskContext/useTaskContext";
 import showMessage from "../../adapters/showMessage";
 
 const Settings = () => {
   const { state, dispatch } = useTaskContext();
-  console.log("STATE", state.config);
 
   const workTimeInput = useRef<HTMLInputElement>(null);
   const shortBreakTimeInput = useRef<HTMLInputElement>(null);

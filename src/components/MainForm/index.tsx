@@ -17,17 +17,15 @@ const MainForm = () => {
 
   const nextCycle = getNextCycle(state.currentCycle);
   const nextCycleType = getNextCycleType(nextCycle);
-  const nextCycleDuration = getNextCycleDuration(nextCycleType);
-  const cycleDescription = getCycleDescription();
+  const nextCycleDuration = getNextCycleDuration(nextCycleType, state);
+  const cycleDescription = getCycleDescription(state);
   const lastTaskName = state.tasks.at(-1)?.name || "";
 
   const handleCreateNewTask = (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     showMessage.dismiss();
 
-    const taskName = Object.fromEntries(
-      new FormData(e.currentTarget).entries(),
-    ).taskName;
+    const taskName = new FormData(e.currentTarget).get("taskName");
 
     if (taskName == undefined) return;
 
