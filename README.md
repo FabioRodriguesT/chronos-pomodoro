@@ -64,7 +64,11 @@ Você pode então acessar a API em http://localhost:3000 (ou utilizando sua port
 
 A aplicação está publicada e disponível online através da Vercel.
 
+🔗 [🚀 Acessar o Chronos Pomodoro](https://chronos-pomodoro-five-gilt.vercel.app/){:target="_blank"}
+
 🔗 [🚀 Acessar o Chronos Pomodoro](https://google.com/)
+
+Click [here](https://www.geeksforgeeks.org/){:target="_blank"} to visit GeeksForGeeks website.
 
 
 ### 🗺️ Rotas disponíveis:
