@@ -10,6 +10,7 @@ A aplicação permite organizar sessões de foco e pausas de forma simples, mant
 - [Instalação](#-instalação)
 - [Utilizando a API](#-utilizando-a-api)
 - [Rotas disponíveis](#%EF%B8%8F-rotas-dispon%C3%ADveis)
+- [Aplicação Online](-aplicação-online)
 - [Dependências](#-dependências)
 - [Licença](#-licença)
 
@@ -64,14 +65,7 @@ Você pode então acessar a API em http://localhost:3000 (ou utilizando sua port
 
 A aplicação está publicada e disponível online através da Vercel.
 
-🔗 [🚀 Acessar o Chronos Pomodoro](https://chronos-pomodoro-five-gilt.vercel.app/){:target="_blank"}
-
-🔗 [🚀 Acessar o Chronos Pomodoro](https://google.com/)
-
-<a href="https://chronos-pomodoro-five-gilt.vercel.app/" target="_blank">
-  🚀 Acessar o Chronos Pomodoro
-</a>
-
+🔗 [🚀 Acessar o Chronos Pomodoro](https://chronos-pomodoro-five-gilt.vercel.app/
 
 ### 🗺️ Rotas disponíveis:
 
