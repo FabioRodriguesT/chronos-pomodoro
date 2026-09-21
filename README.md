@@ -72,62 +72,32 @@ Você pode então acessar a API em http://localhost:3000 (ou utilizando sua port
 | `/not-found`                 | Exibe a tela de página não encontrada                       |
 
 
-## 🧪 Testes
-
-### ✅ Cobertura de Código
-
-Os testes deste projeto alcançam 100% de cobertura de código, garantindo que todas as funcionalidades estejam devidamente validadas. Utilizamos o Vitest, um framework de testes rápido e leve, integrado ao Vite.
-
-### 🚀 Executando os Testes
-
-Para rodar os testes localmente, execute o seguinte comando:
-
-```bash
-npm run test
-```
-
-Para gerar um relatório de cobertura em tempo real, utilize:
-
-```bash
-npm run coverage
-```
-
-Isso criará um relatório detalhado em HTML, que pode ser visualizado no navegador.
-
 ## 📦 Dependências
 
 ### 📁 Dependencias:
 
 - date-fns
-- mocha
+- lucide-react
+- nanoid
 - react
 - react-dom
-- react-google-fonts
-- react-router-dom
-- styled-components
+- react-router
+- react-toastify
 
 ### 🔬 Depêndencias de Desenvolvimento:
 
+- @eslint/js
+- @types/node
+- @types/react
+- @types/react-dom
+- @vitejs/plugin-react-swc
 - eslint
 - eslint-plugin-react-hooks
-- cross-env
-- @testing-library/dom
-- @testing-library/jest-dom
-- @testing-library/react
-- @testing-library/user-event
-- @types/jest
-- @types/react-dom
-- @types/react-router-dom
+- eslint-plugin-react-refresh
+- globals
 - typescript
+- typescript-eslint
 - vite
-- @vitejs/plugin-react
-- vitest
-- vitest-coverage-v8
-- cypress
-- cypress-multi-reporters
-- jsdom
-- stylelint
-- stylelint-order
 
 ## 🗝 Licença:
 
