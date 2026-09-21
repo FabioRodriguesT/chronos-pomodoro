@@ -6,8 +6,7 @@ A aplicação permite organizar sessões de foco e pausas de forma simples, mant
 
 ## ✒️ Sumário
 
-- [API Consumida](#-api-consumida)
-- [Sobre o projeto](#-sobre-o-projeto)
+- [Sobre o projeto](#-Sobre-o-Projeto)
 - [Instalação](#-instalação)
 - [Utilizando a API](#-utilizando-a-api)
 - [Rotas disponíveis](#%EF%B8%8F-rotas-dispon%C3%ADveis)
