@@ -60,6 +60,13 @@ npm run start
 
 Você pode então acessar a API em http://localhost:3000 (ou utilizando sua porta específica).
 
+## Aplicação Online
+
+A aplicação está publicada e disponível online através da Vercel.
+
+🔗 Acessar o Chronos Pomodoro
+
+
 ### 🗺️ Rotas disponíveis:
 
 | Rota                         | Funcionalidade                                               |
