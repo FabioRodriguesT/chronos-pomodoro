@@ -101,5 +101,4 @@ Você pode então acessar a API em http://localhost:3000 (ou utilizando sua port
 
 ## 🗝 Licença:
 
-Projeto relazido no curso do Udemy: Curso de React JS 19 e Next.js 15, criado por Luiz Otávio Miranda e Tales Calogi Malaquias.
-
+Projeto desenvolvido durante o curso Curso de React JS 19 e Next.js 15, da Udemy, ministrado por Luiz Otávio Miranda e Tales Calogi Malaquias.
