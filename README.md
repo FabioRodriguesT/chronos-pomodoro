@@ -20,7 +20,7 @@ A aplicação permite organizar sessões de foco e pausas de forma simples, mant
 
 O projeto foi desenvolvido com foco em organização de código, componentização, gerenciamento de estado e boas práticas de desenvolvimento, servindo também como projeto prático para aprofundar conhecimentos em desenvolvimento Front-end.
 
-###Funcionalidades
+### ✨ Funcionalidades
 <ul>
     <li>⏱️ Temporizador baseado na Técnica Pomodoro</li>
     <li>📝 Criação e gerenciamento de tarefas</li>
