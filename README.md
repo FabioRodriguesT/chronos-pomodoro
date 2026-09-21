@@ -1,8 +1,8 @@
 ## Descrição:
 
-**Recipes App** é um app de receitas, utilizando o que há de mais moderno dentro do ecossistema React: Hooks e Context API!
-O projeto consiste em desenvolver um sistema que permite visualizar, buscar, filtrar, favoritar, compartilhar e acompanhar o processo de preparação de receitas e drinks. A base de dados serão 2 APIs distintas, uma para comidas e outra para bebidas.
-O layout tem como foco dispositivos móveis, então todos os protótipos vão estar desenvolvidos em telas menores.
+**Chronos pomodoro** é um app de uma aplicação web desenvolvida para auxiliar no gerenciamento do tempo e aumentar a produtividade utilizando a Técnica Pomodoro.
+
+A aplicação permite organizar sessões de foco e pausas de forma simples, mantendo o usuário concentrado em suas atividades durante períodos determinados de trabalho, seguidos por intervalos de descanso.
 
 ## ✒️ Sumário
 
