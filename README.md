@@ -68,7 +68,9 @@ A aplicação está publicada e disponível online através da Vercel.
 
 🔗 [🚀 Acessar o Chronos Pomodoro](https://google.com/)
 
-Click [here](https://www.geeksforgeeks.org/){:target="_blank"} to visit GeeksForGeeks website.
+<a href="https://chronos-pomodoro-five-gilt.vercel.app/" target="_blank">
+  🚀 Acessar o Chronos Pomodoro
+</a>
 
 
 ### 🗺️ Rotas disponíveis:
