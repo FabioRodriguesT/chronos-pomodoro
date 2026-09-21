@@ -30,18 +30,7 @@ O projeto foi desenvolvido com foco em organização de código, componentizaç�
     <li>🌙 Tema claro e escuro</li>
     <li>🔔 Notificações para indicar mudanças de sessão</li>
     <li>💾 Persistência das configurações no navegador</li>
-<ul>
-
-
-
-No app foram criadas 10 telas, são elas: 
-
-
-
-
-As telas de "Meals In Progress e Drinks In Progress" permitem ao usuário acompanhar o progresso da receita, marcando os ingredientes conforme são preparados. O estado é mantido mesmo após atualizar a página, utilizando o localStorage com a chave inProgressRecipes .
-
-O aplicativo consome as APIs públicas do TheMealDB e TheCocktailDB para obter dados de receitas e drinks.
+</ul>
 
 ## 🔌 Instalação:
 Para a configuração do projeto, siga os seguintes passos:
@@ -49,8 +38,8 @@ Para a configuração do projeto, siga os seguintes passos:
 Clone o Repositório:
 
 ```bash
-git clone git@github.com:FabioRodriguesT/project_recipes_app.git
-cd project_recipes_app
+git clone git@github.com:FabioRodriguesT/chronos-pomodoro.git
+cd chronos-pomodoro
 ```
 
 Instale as dependências:
@@ -76,16 +65,12 @@ Você pode então acessar a API em http://localhost:3000 (ou utilizando sua port
 
 | Rota                         | Funcionalidade                                               |
 |:----------------------------:|:-----------------------------------------------------------:|
-| `/`                          | Exibe a tela de login do aplicativo                         |
-| `/meals`                     | Exibe todas as receitas de comidas                          |
-| `/drinks`                    | Exibe todas as receitas de bebidas                          |
-| `/profile`                   | Exibe o perfil do usuário                                   |
-| `/done-recipes`              | Exibe todas as receitas já realizadas                       |
-| `/favorite-recipes`          | Exibe todas as receitas favoritas                           |
-| `/meals/{id}`                | Exibe os detalhes de uma receita de comida pelo **ID**      |
-| `/drinks/{id}`               | Exibe os detalhes de uma receita de bebida pelo **ID**      |
-| `/meals/{id}/in-progress`    | Exibe o progresso de uma receita de comida pelo **ID**      |
-| `/drinks/{id}/in-progress`   | Exibe o progresso de uma receita de bebida pelo **ID**      |
+| `/`                          | Exibe a tela Principal com o cronômetro                     |
+| `/history`                   | Exibe a tela do histórico, com todas as tarefas ja criadas  |
+| `/settings`                  | Exibe a tela de configurações, podendo customizar os tempos das tarefas |
+| `/about-pomodoro`            | Exibe a tela que explica sobra a técnica promodoro          |
+| `/not-found`                 | Exibe a tela de página não encontrada                       |
+
 
 ## 🧪 Testes
 
