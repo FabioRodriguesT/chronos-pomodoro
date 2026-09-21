@@ -64,7 +64,7 @@ Você pode então acessar a API em http://localhost:3000 (ou utilizando sua port
 
 A aplicação está publicada e disponível online através da Vercel.
 
-🔗 Acessar o Chronos Pomodoro
+🔗 [🚀 Acessar o Chronos Pomodoro](https://google.com/)
 
 
 ### 🗺️ Rotas disponíveis:
