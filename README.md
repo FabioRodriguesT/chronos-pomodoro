@@ -101,5 +101,5 @@ Você pode então acessar a API em http://localhost:3000 (ou utilizando sua port
 
 ## 🗝 Licença:
 
-Este projeto é licenciado sob a Licença MIT. Boa codificação!
+Projeto relazido no curso do Udemy: Curso de React JS 19 e Next.js 15, criado por Luiz Otávio Miranda e Tales Calogi Malaquias.
 
