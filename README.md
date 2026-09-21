@@ -9,7 +9,7 @@ A aplicação permite organizar sessões de foco e pausas de forma simples, mant
 - [Sobre o projeto](#-Sobre-o-Projeto)
 - [Instalação](#-instalação)
 - [Utilizando a API](#-utilizando-a-api)
-- [Aplicação Online](#aplicacao-online)
+- [Aplicação Online](#aplicação-online)
 - [Rotas disponíveis](#%EF%B8%8F-rotas-dispon%C3%ADveis)
 - [Dependências](#-dependências)
 - [Licença](#-licença)
